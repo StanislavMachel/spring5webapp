@@ -17,9 +17,14 @@ public class Book {
     @OneToOne
     private Publisher publisher;
 
+
+
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"))
     private Set<Author> authors = new HashSet<Author>();
+
+    public Book() {
+    }
 
     public Book(String title, String isbn, Publisher publisher){
         this.title = title;
